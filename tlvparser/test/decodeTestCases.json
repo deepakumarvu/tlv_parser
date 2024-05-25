@@ -1,0 +1,106 @@
+[
+    {
+        "name": "Decoder Testing",
+        "cases": [
+            {
+                "description": "Testing int",
+                "input": "AAQAAAAB",
+                "output": {
+                    "decoded": {
+                        "X": 1
+                    },
+                    "isError": false
+                }
+            },
+            {
+                "description": "Testing string",
+                "input": "AgEx",
+                "output": {
+                    "decoded": {
+                        "y": "1"
+                    },
+                    "isError": false
+                }
+            },
+            {
+                "description": "Testing byte[]",
+                "input": "AwMAATE=",
+                "output": {
+                    "decoded": {
+                        "z": "AAEx"
+                    },
+                    "isError": false
+                }
+            },
+            {
+                "description": "Testing int64",
+                "input": "AQgAAAAAAAAAAQ==",
+                "output": {
+                    "decoded": {
+                        "X1": 1
+                    },
+                    "isError": false
+                }
+            }
+        ]
+    },
+    {
+        "name": "All Types Decoder Testing",
+        "cases": [
+            {
+                "description": "Testing Non Pointer",
+                "input": "AQQAAAABAgEBAwIAAQQEAAAAAQUIAAAAAAAAAAEGBAAAAAEHAQEIAgABCQQAAAABCggAAAAAAAAAAQsBMQwDAAEx",
+                "output": {
+                    "decoded": {
+                        "X": 1,
+                        "X8": 1,
+                        "X16": 1,
+                        "X32": 1,
+                        "X64": 1,
+                        "Y8": 1,
+                        "Y16": 1,
+                        "Y32": 1,
+                        "UX": 1,
+                        "UX8": 1,
+                        "UX16": 1,
+                        "UX32": 1,
+                        "UX64": 1,
+                        "UY8": 1,
+                        "UY16": 1,
+                        "UY32": 1,
+                        "STR": "1",
+                        "BArr": "AAEx"
+                    },
+                    "isError": false
+                }
+            },
+            {
+                "description": "Testing Pointer",
+                "input": "DQQAAAABDgEBDwIAARAEAAAAAREIAAAAAAAAAAESBAAAAAETAQEUAgABFQQAAAABFggAAAAAAAAAARcBMRgDAAEx",
+                "output": {
+                    "decoded": {
+                        "PX": 1,
+                        "PX8": 1,
+                        "PX16": 1,
+                        "PX32": 1,
+                        "PX64": 1,
+                        "PY8": 1,
+                        "PY16": 1,
+                        "PY32": 1,
+                        "PUX": 1,
+                        "PUX8": 1,
+                        "PUX16": 1,
+                        "PUX32": 1,
+                        "PUX64": 1,
+                        "PUY8": 1,
+                        "PUY16": 1,
+                        "PUY32": 1,
+                        "PSTR": "1",
+                        "PBArr": "AAEx"
+                    },
+                    "isError": false
+                }
+            }
+        ]
+    }
+]

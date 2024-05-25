@@ -1,0 +1,153 @@
+[
+    {
+        "name": "Encoding Simple Struct",
+        "cases": [
+            {
+                "description": "Testing OmitEmpty int - empty",
+                "input": {
+                    "x": 0
+                },
+                "output": {
+                    "isError": false,
+                    "encoded": ""
+                }
+            },
+            {
+                "description": "Testing OmitEmpty int - non empty",
+                "input": {
+                    "x": 1
+                },
+                "output": {
+                    "isError": false,
+                    "encoded": "AAQAAAAB"
+                }
+            },
+            {
+                "description": "Testing OmitEmpty string - empty",
+                "input": {},
+                "output": {
+                    "isError": false,
+                    "encoded": ""
+                }
+            },
+            {
+                "description": "Testing OmitEmpty string - non empty",
+                "input": {
+                    "y": "1"
+                },
+                "output": {
+                    "isError": false,
+                    "encoded": "AgEx"
+                }
+            },
+            {
+                "description": "Testing OmitEmpty byte[] - empty",
+                "input": {},
+                "output": {
+                    "isError": false,
+                    "encoded": ""
+                }
+            },
+            {
+                "description": "Testing OmitEmpty byte[0 1 49] - non empty",
+                "input": {
+                    "z": "AAEx"
+                },
+                "output": {
+                    "isError": false,
+                    "encoded": "AwMAATE="
+                }
+            },
+            {
+                "description": "Testing no tag provided",
+                "input": {
+                    "z": "AAEx",
+                    "o": "1"
+                },
+                "output": {
+                    "isError": false,
+                    "encoded": "AwMAATE="
+                }
+            },
+            {
+                "description": "Testing OmitEmpty int64 - empty",
+                "input": {
+                    "x1": 0
+                },
+                "output": {
+                    "isError": false,
+                    "encoded": ""
+                }
+            },
+            {
+                "description": "Testing OmitEmpty int64 - non empty",
+                "input": {
+                    "x1": 1
+                },
+                "output": {
+                    "isError": false,
+                    "encoded": "AQgAAAAAAAAAAQ=="
+                }
+            }
+        ]
+    },
+    {
+        "name": "Testing All supported types",
+        "cases": [
+            {
+                "description": "Testing Non Pointer",
+                "input": {
+                    "X": 1,
+                    "X8": 1,
+                    "X16": 1,
+                    "X32": 1,
+                    "X64": 1,
+                    "Y8": 1,
+                    "Y16": 1,
+                    "Y32": 1,
+                    "UX": 1,
+                    "UX8": 1,
+                    "UX16": 1,
+                    "UX32": 1,
+                    "UX64": 1,
+                    "UY8": 1,
+                    "UY16": 1,
+                    "UY32": 1,
+                    "STR": "1",
+                    "BArr": "AAEx"
+                },
+                "output": {
+                    "isError": false,
+                    "encoded": "AQQAAAABAgEBAwIAAQQEAAAAAQUIAAAAAAAAAAEGBAAAAAEHAQEIAgABCQQAAAABCggAAAAAAAAAAQsBMQwDAAEx"
+                }
+            },
+            {
+                "description": "Testing Pointer",
+                "input": {
+                    "PX": 1,
+                    "PX8": 1,
+                    "PX16": 1,
+                    "PX32": 1,
+                    "PX64": 1,
+                    "PY8": 1,
+                    "PY16": 1,
+                    "PY32": 1,
+                    "PUX": 1,
+                    "PUX8": 1,
+                    "PUX16": 1,
+                    "PUX32": 1,
+                    "PUX64": 1,
+                    "PUY8": 1,
+                    "PUY16": 1,
+                    "PUY32": 1,
+                    "PSTR": "1",
+                    "PBArr": "AAEx"
+                },
+                "output": {
+                    "isError": false,
+                    "encoded": "DQQAAAABDgEBDwIAARAEAAAAAREIAAAAAAAAAAESBAAAAAETAQEUAgABFQQAAAABFggAAAAAAAAAARcBMRgDAAEx"
+                }
+            }
+        ]
+    }
+]
